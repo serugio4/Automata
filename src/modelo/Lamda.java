@@ -101,6 +101,7 @@ public class Lamda {
 			}
 			if(arbol.getNombre().equalsIgnoreCase("q3") && cadena.charAt(0) == 'b' ){
 				estado = false;
+				System.out.println("No puedo leer la siguiente b, "+ estado);
 				return estado;
 				
 			}
