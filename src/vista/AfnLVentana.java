@@ -45,14 +45,13 @@ public class AfnLVentana extends JFrame implements ActionListener {
 		image = new ImageIcon("src/img/afn-L segundo corte.jpg");
 		image = new ImageIcon(image.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 		
-		imageExpresionRegular = new ImageIcon(getClass().getResource("/img/expresion_regular_afn_primer_corte.jpg"));
+		imageExpresionRegular = new ImageIcon(getClass().getResource("/img/expresion_regular_afn-L_segundo_corte.jpg"));
 		imageExpresionRegular = new ImageIcon(imageExpresionRegular.getImage().getScaledInstance(200, 50, Image.SCALE_DEFAULT));
 		
 		JPanel panel = new JPanel();
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("hice click");
 				File file = new File("src/img/afn-L segundo corte.jpg");
 				try {
 					Desktop.getDesktop().open(file);
@@ -77,7 +76,7 @@ public class AfnLVentana extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setTitle("desarrollado por Sergio Garcia y Jose Alvarez");
 		
-		JLabel lblAutomataFinitoDeterminista = new JLabel("AUTOMATA FINITO NO DETERMINISTA");
+		JLabel lblAutomataFinitoDeterminista = new JLabel("A F N - LAMBDA");
 		lblAutomataFinitoDeterminista.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblAutomataFinitoDeterminista.setBounds(100, 22, 400, 29);
 		contentPane.add(lblAutomataFinitoDeterminista);
@@ -108,11 +107,27 @@ public class AfnLVentana extends JFrame implements ActionListener {
 		contentPane.add(btnNewButton);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				File file = new File("src/img/expresion_regular_afn-L_segundo_corte.jpg");
+				try {
+					Desktop.getDesktop().open(file);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		
 		panel_1.setBorder(new TitledBorder(null, "Expresion regular", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBounds(10, 196, 303, 72);
 		labelExpresionRegular.setBounds(0, 0, panel_1.getWidth(), panel_1.getHeight());
 		panel_1.add(labelExpresionRegular);
 		contentPane.add(panel_1);
+		
+		
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Descripcion del lenguaje", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -123,8 +138,8 @@ public class AfnLVentana extends JFrame implements ActionListener {
 		panel_2.add(txtrAutmataFinitoDeterminista);
 		txtrAutmataFinitoDeterminista.setEditable(false);
 		txtrAutmataFinitoDeterminista.setFont(new Font("Monospaced", Font.PLAIN, 14));
-		txtrAutmataFinitoDeterminista.setText("Automata finito no determinista que \r\nacepta el lenguajes de todas las"
-				+ " \r\ncadenas que contengan la cadena 'bc'\r\n dentro del alfabeto {a,b,c} ");
+		txtrAutmataFinitoDeterminista.setText("Automata finito no determinista con \r\ntransiciones lambda"
+				+ " \r\ndentro del alfabeto {a,b}");
 		txtrAutmataFinitoDeterminista.setToolTipText("");
 		
 		btnNewButton.addActionListener(this);
