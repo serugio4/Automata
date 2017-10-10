@@ -38,8 +38,8 @@ public class AfdVentana extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private JTextField textField;
 	Controlador controlador;
-	ImageIcon image;
-	JLabel labelImagen;
+	ImageIcon image, imageExpresionRegular;
+	JLabel labelImagen, labelExpresionRegular;
 	
 
 
@@ -47,6 +47,9 @@ public class AfdVentana extends JFrame implements ActionListener {
 		
 		image = new ImageIcon("src/img/afd_primer_corte.jpg");
 		image = new ImageIcon(image.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
+		
+		imageExpresionRegular = new ImageIcon(getClass().getResource("/img/expresion_regular_afd_primer_corte.jpg"));
+		imageExpresionRegular = new ImageIcon(imageExpresionRegular.getImage().getScaledInstance(200, 50, Image.SCALE_DEFAULT));
 		JPanel panel = new JPanel();
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -61,7 +64,7 @@ public class AfdVentana extends JFrame implements ActionListener {
 				}
 		}});
 		labelImagen = new JLabel(image);
-		
+		labelExpresionRegular = new JLabel(imageExpresionRegular);
 		
 		this.controlador = controlador;
 		setResizable(false);
@@ -110,6 +113,7 @@ public class AfdVentana extends JFrame implements ActionListener {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Expresion regular", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBounds(10, 196, 303, 72);
+		panel_1.add(labelExpresionRegular);
 		contentPane.add(panel_1);
 		
 		JPanel panel_2 = new JPanel();
