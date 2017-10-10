@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Lamda {
 
-	ArbolNode arbol;
-	boolean estado;
+	private ArbolNode arbol;
+	private boolean estado;
 
 
 //	public static void main(String[] args) {
@@ -122,8 +122,13 @@ public class Lamda {
 //		
 
 		return estado;
-
-
-
+	}
+	
+	
+	public boolean getEstado(){
+		return this.estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
 	}
 }

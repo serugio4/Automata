@@ -2,24 +2,22 @@ package modelo;
 
 import java.util.ArrayList;
 
-public class Afn2 {
-	ArbolNode arbol;
-	boolean estado;
-
-
+public class AfnDos {
+	private ArbolNode arbol;
+	private boolean estado;
+	
 //	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
+//	// TODO Auto-generated method stub
 //
-//		Afn2 a = new Afn2();
-//		try {
-//			a.estado = true;
-//			System.out.println(a.leerCadena("aaabbbbaaabbababa",a.crearArbol(new ArbolNode("q0")).getPadre()));
-//		} catch (IllegalAccessException e) {
-//			// TODO Auto-generated catch block
-//			System.out.println("Acabo en aceptacion");
-//		}
-//
+//	AfnDos a= new AfnDos();
+//	try{
+//		System.out.println(a.leerCadena("aaabaa", a.crearArbol(new ArbolNode("q0")).getPadre()));
+//	} catch (IllegalAccessException e) {
+//		// TODO Auto-generated catch block
+//		System.out.println("Acabo en aceptacion");
 //	}
+//
+//}
 
 	public ArbolNode crearArbol(ArbolNode node) {
 
@@ -141,16 +139,25 @@ public class Afn2 {
 					throw new IllegalAccessException();
 				}
 			}
-			
+
 			if (cadena.charAt(0)!='a' && cadena.charAt(0)!='b'){
 				estado = false;
-				System.out.println("El caracter "+ cadena.charAt(0)+ " No pertenece al alfabeto");
+				System.out.println("El caracter "+ cadena.charAt(0) + " No pertenece al alfabeto");
 			}
 		}
 
 		return estado;
 
 	}
+	
+	public boolean getEstado(){
+		return this.estado;
+	}
+	
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	
 
 
 }

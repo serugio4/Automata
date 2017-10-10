@@ -2,10 +2,7 @@ package controlador;
 
 import javax.swing.JOptionPane;
 
-import modelo.Afd;
-import modelo.Afn;
-import modelo.AfnPrueba;
-import modelo.ArbolNode;
+import modelo.*;
 import vista.AfdVentana;
 import vista.AfnVentana;
 
@@ -15,6 +12,8 @@ public class Controlador {
 	AfdVentana afdVentana;
 	Afd afd;
 	Afn afn;
+	AfnDos afnDos;
+	Lamda lamda;
 	ArbolNode arbolNode;
 	
 	
@@ -63,6 +62,48 @@ public class Controlador {
 			
 		}
 		
+		
+	}
+	
+	public void Afn2(String cadena){
+		afnDos = new AfnDos();
+		arbolNode = new ArbolNode("q0");
+		
+		try {
+			
+		afnDos.leerCadena(cadena, afnDos.crearArbol(arbolNode).getPadre());
+		if (afnDos.getEstado() == true){
+			JOptionPane.showMessageDialog(null, "La cadena fue aceptada");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Se revisaron todos los caminos y se nego la cadena");
+		}
+			
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "La cadena fue aceptada");
+		}
+		
+	}
+	
+	public void lamda(String cadena){
+		lamda = new Lamda();
+		arbolNode = new ArbolNode("q0");
+		
+		try {
+			
+		lamda.leerCadena(cadena, lamda.crearArbol(arbolNode).getPadre());
+		if (lamda.getEstado() == true){
+			JOptionPane.showMessageDialog(null, "La cadena fue aceptada");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Se revisaron todos los caminos y se nego la cadena");
+		}
+			
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "La cadena fue aceptada, Mirar el camino en consola");
+		}
 		
 	}
 	

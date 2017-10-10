@@ -137,7 +137,7 @@ public class Afn2Ventana extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		 if(e.getActionCommand().equalsIgnoreCase("validar")) {
 			 
-			 ctrl.ejecutarAfn(textField.getText());
+			 ctrl.Afn2(textField.getText());
 			 textField.setText("");
 			 
 		 }

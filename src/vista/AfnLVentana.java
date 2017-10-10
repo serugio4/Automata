@@ -137,7 +137,7 @@ public class AfnLVentana extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		 if(e.getActionCommand().equalsIgnoreCase("validar")) {
 			 
-			 ctrl.ejecutarAfn(textField.getText());
+			 ctrl.lamda(textField.getText());
 			 textField.setText("");
 			 
 		 }
